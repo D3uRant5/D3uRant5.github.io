@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html>
+  <!-- Html Head Tag-->
+  <head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="">
+  <meta name="author" content="Durant">
+  <!-- Open Graph Data -->
+  <meta property="og:title" content="docker常用命令"/>
+  <meta property="og:description" content="" />
+  <meta property="og:site_name" content="Welcome"/>
+  <meta property="og:type" content="article" />
+  <meta property="og:image" content="http://yoursite.com"/>
+  
+    <link rel="alternate" href="/atom.xml" title="Welcome" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+
+  <!-- Site Title -->
+  <title>Welcome</title>
+
+  <!-- Bootstrap CSS -->
+  
+<link rel="stylesheet" href="/css/bootstrap.min.css">
+
+  <!-- Custom CSS -->
+  
+  
+<link rel="stylesheet" href="/css/style.light.css">
+
+
+  <!-- Google Analytics -->
+  
+
+<meta name="generator" content="Hexo 5.0.0"></head>
+
+  <body>
+    <!-- Page Header -->
+
+
+<header class="site-header header-background" style="background-image: url(/img/default-banner-dark.jpg)">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <div class="page-title with-background-image">
+          <p class="title">docker常用命令</p>
+          <p class="subtitle"></p>
+        </div>
+        <div class="site-menu with-background-image">
+          <ul>
+            
+              <li>
+                <a href="/">
+                  
+                  主页
+                  
+                </a>
+              </li>
+            
+              <li>
+                <a href="/archives">
+                  
+                  日期
+                  
+                </a>
+              </li>
+            
+              <li>
+                <a target="_blank" rel="noopener" href="https://github.com/D3uRant5">
+                  
+                  Github
+                  
+                </a>
+              </li>
+            
+              <li>
+                <a target="_blank" rel="noopener" href="https://gitee.com/D3uRant5">
+                  
+                  码云
+                  
+                </a>
+              </li>
+            
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<article>
+  <div class="container typo">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <div class="post-info text-muted">
+          
+            <!-- Author -->
+            <span class="author info">By Durant</span>
+          
+          <!-- Date -->
+          <span class="date-time info">On
+            <span class="date">2020-08-03</span>
+            <span class="time">20:18:16</span>
+          </span>
+          
+          <!--  Categories  -->
+            <span class="categories info">Under 
+
+<a href="/categories/%E5%AE%B9%E5%99%A8%E6%8A%80%E6%9C%AF/">容器技术</a>
+</span>
+          
+        </div>
+        <!-- Tags -->
+        
+          <div class="post-tags text-muted">
+            Tags: 
+
+<a class="tag" href="/tags/docker/">#docker</a>
+
+
+          </div>
+        
+        <!-- Post Main Content -->
+        <div class="post-content">
+          <h1 id="docker常用命令"><a href="#docker常用命令" class="headerlink" title="docker常用命令"></a>docker常用命令</h1><figure class="highlight properties"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#查看曾经运行的容器</span></span><br><span class="line"><span class="attr">docker</span> <span class="string">ps -a</span></span><br><span class="line"><span class="comment">#查看正在运行的容器</span></span><br><span class="line"><span class="attr">docker</span> <span class="string">ps -a</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#进入容器</span></span><br><span class="line"><span class="attr">docker</span> <span class="string">run -it centos /bin/bash</span></span><br><span class="line"><span class="comment">#退出</span></span><br><span class="line"><span class="attr">exit</span> <span class="string">容器停止并退出</span></span><br><span class="line"><span class="meta">ctrl+p+q</span> <span class="string">容器不停止并退出</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#删除容器</span></span><br><span class="line"><span class="attr">docker</span> <span class="string">rm 容器id #删除指定容器  不能删除正在运行的容器 如要强行删除 rm -f</span></span><br><span class="line"><span class="attr">docker</span> <span class="string">rm-f $(decker ps -aq) #删除所有容器</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>容器挂载</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash">方式一 : 通过命令来挂载 -v</span></span><br><span class="line">docker run -it -v 主机目录:容器目录(进行映射) /bin/bash</span><br><span class="line">本地修改 容器内自动同步</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h1 id="docker-中的MYSQL"><a href="#docker-中的MYSQL" class="headerlink" title="docker 中的MYSQL"></a>docker 中的MYSQL</h1><figure class="highlight properties"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#启动容器中的 mysql </span></span><br><span class="line"><span class="attr">docker</span> <span class="string">start 153e4f1258ea </span></span><br><span class="line"><span class="comment">#关闭容器中的mysql </span></span><br><span class="line"><span class="attr">docker</span> <span class="string">stop 153e4f1258ea </span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+
+
+        </div>
+      </div>
+    </div>
+  </div>
+</article>
+
+
+
+    <!-- Footer -->
+<footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <p class="copyright text-muted">
+          Theme By <a target="_blank" href="https://github.com/levblanc">Levblanc.</a>
+          Inspired By <a target="_blank" href="https://github.com/klugjo/hexo-theme-clean-blog">Clean Blog.</a>
+        <p class="copyright text-muted">
+          Powered By <a target="_blank" href="https://hexo.io/">Hexo.</a>
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+    <!-- After Footer Scripts -->
+
+<script src="/js/highlight.pack.js"></script>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function(event) {
+    var codeBlocks = Array.prototype.slice.call(document.getElementsByTagName('pre'))
+    codeBlocks.forEach(function(block, index) {
+      hljs.highlightBlock(block);
+    });
+  });
+</script>
+
+  </body>
+</html>
+
